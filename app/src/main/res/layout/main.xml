@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="2">
+    <RelativeLayout
+        android:id="@+id/title_relative"
+        android:layout_width="match_parent"
+        android:layout_height="45.0dp"
+        android:background="#000000"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:id="@+id/title_city_manager"
+            android:layout_height="45.0dp"
+            android:layout_width="45.0dp"
+            android:src="@drawable/title_city_manager"
+            >
+        </ImageView>
+        <TextView
+            android:layout_height="45.0dp"
+            android:layout_width="match_parent"
+
+            android:layout_toRightOf="@id/title_city_manager"
+            android:gravity="center_vertical"
+
+            android:text="天氣狀態"
+            android:textSize="25.0sp"
+            android:textColor="#FFFFFF">
+        </TextView>
+        <ImageView
+            android:id="@+id/title_city_locate"
+            android:layout_height="45dp"
+            android:layout_width="45dp"
+
+            android:layout_toLeftOf="@+id/title_city_update"
+            android:src="@drawable/title_city_locate"
+
+            >
+        </ImageView>
+        <ImageView
+            android:id="@+id/title_city_update"
+            android:layout_height="45.0dp"
+            android:layout_width="45.0dp"
+
+            android:layout_toLeftOf="@+id/title_city_share"
+
+            android:src="@drawable/title_city_update">
+        </ImageView>
+        <ImageView
+            android:id="@+id/title_city_share"
+            android:layout_height="45.0dp"
+            android:layout_width="45.0dp"
+
+            android:layout_alignParentRight="true"
+
+            >
+        </ImageView>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/today_relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/biz_plugin_weather_qing">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/title_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="基隆市"
+                android:textColor="#FFFFFF"
+                android:textSize="50.0sp" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(今晚至明晨)"
+                android:textColor="#FFFFFF"
+                android:textSize="15.0sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="溫度:16~19℃"
+                android:textColor="#FFFFFF"
+                android:textSize="30.0sp"/>
+            <TextView
+                android:id="@+id/rainfall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="降雨機率:0%"
+                android:textColor="#FFFFFF"
+                android:textSize="30.0sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="晴時多雲"
+                android:textColor="#FFFFFF"
+                android:textSize="20.0sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/today_relative_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/biz_plugin_weather_cloudy"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/title_city_name_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="N/A"
+                android:textColor="#FFFFFF"
+                android:textSize="50.0sp" />
+            <TextView
+                android:id="@+id/time_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N/A"
+                android:textColor="#FFFFFF"
+                android:textSize="15.0sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/temperature_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N/A"
+                android:textColor="#FFFFFF"
+                android:textSize="30.0sp"/>
+            <TextView
+                android:id="@+id/rainfall_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N/A"
+                android:textColor="#FFFFFF"
+                android:textSize="30.0sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/status_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N/A"
+                android:textColor="#FFFFFF"
+                android:textSize="20.0sp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
