@@ -419,7 +419,7 @@ public class MainActivity extends Activity implements View.OnClickListener,Conne
         Drawable yin = resources.getDrawable(R.drawable.biz_plugin_weather_yin);
         Drawable rain = resources.getDrawable(R.drawable.biz_plugin_weather_rain);
 
-        Log.d("777777",b[3]);
+        Log.d("77777",b[3]);
 
         if(statusT.getText()!=null){
             Log.d("88888888",b[3]);
