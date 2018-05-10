@@ -35,6 +35,19 @@ public class TodayWeather {
 
     private String title_2;
 
+    private String notice;
+
+    public String getNotice() {
+        return notice;
+    }
+
+    public void setNotice(String title) {
+        this.notice = notice;
+    }
+
+
+
+
 
 
 
@@ -44,5 +57,8 @@ public class TodayWeather {
     }
     public String toString_2(){
         return title_2;
+    }
+    public String toString_3(){
+        return notice;
     }
 }

@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -62,6 +63,7 @@ public class MainActivity extends Activity implements View.OnClickListener,Conne
     private TextView rainfullT_2;
     private TextView statusT_2;
     private TextView timeT_2;
+    private ImageView noticeBtn;
     String a;
     String[] b;
     String c;
@@ -110,6 +112,8 @@ public class MainActivity extends Activity implements View.OnClickListener,Conne
         mLongitudeLabel = "經度";
         SelectCityBtn = (ImageView)findViewById(R.id.title_city_manager);
         SelectCityBtn.setOnClickListener(this);
+        noticeBtn = (ImageView)findViewById(R.id.title_city_notice);
+        noticeBtn.setOnClickListener(this);
         initView();
 
         if (CheckNet.getNetState(this)==CheckNet.NET_NONE){
@@ -177,6 +181,11 @@ public class MainActivity extends Activity implements View.OnClickListener,Conne
         {
             Toast.makeText(MainActivity.this,"Test_02",Toast.LENGTH_SHORT);
             getWeatherDatafromNet(updatecitycode);
+        }
+        else if(v.getId()==R.id.title_city_notice)
+        {
+            Intent intent = new Intent(MainActivity.this, NickyService.class);
+            startService(intent);
         }
     }
     //獲取XML資料
@@ -395,6 +404,7 @@ public class MainActivity extends Activity implements View.OnClickListener,Conne
             rainfullT_2.setText("N/A");
             statusT_2.setText("N/A");
     }
+    //主畫面更新(上)
     void updateTodayWeather(TodayWeather todayWeather)
     {
 
@@ -411,8 +421,7 @@ public class MainActivity extends Activity implements View.OnClickListener,Conne
         statusT.setText(b[3]);
 
 
-        LinearLayout background = (LinearLayout) findViewById(R.id.today_relative);
-        //RelativeLayout background = (RelativeLayout) findViewById(R.id.today_relative);
+        /*LinearLayout background = (LinearLayout) findViewById(R.id.today_relative);
         Resources resources = this.getResources();
         Drawable qing = resources.getDrawable(R.drawable.biz_plugin_weather_qing);
         Drawable cloudy = resources.getDrawable(R.drawable.biz_plugin_weather_cloudy);
@@ -425,14 +434,38 @@ public class MainActivity extends Activity implements View.OnClickListener,Conne
             Log.d("88888888",b[3]);
             switch (b[3]){
                 case "晴時多雲":
+                    background.setBackground(qing);
+                    break;
+                case "多雲時晴":
+                    background.setBackground(qing);
+                case "多雲":
                     background.setBackground(cloudy);
                     break;
-                case "多雲":
+                case "多雲時陰":
+                    background.setBackground(cloudy);
+                case "陰時多雲":
+                    background.setBackground(cloudy);
+                    break;
+                case "陰天":
+                    background.setBackground(yin);
+                case "晴午後短暫雷陣雨":
                     background.setBackground(rain);
+                    break;
+                case "陰時多雲短暫陣雨或雷雨":
+                    background.setBackground(rain);
+                case "多雲時陰短暫陣雨或雷雨":
+                    background.setBackground(rain);
+                    break;
+                case "多雲午後短暫雷陣雨":
+                    background.setBackground(rain);
+                case "陰短暫陣雨或雷雨":
+                    background.setBackground(rain);
+                    break;
             }
-        }
+        }*/
         Toast.makeText(MainActivity.this,"更新成功",Toast.LENGTH_SHORT).show();
     }
+    //主畫面更新(下)
     void updateTodayWeather_2(TodayWeather todayWeather_2)
     {
 
@@ -448,6 +481,49 @@ public class MainActivity extends Activity implements View.OnClickListener,Conne
         temperatureT_2.setText("溫度:"+d[5]+d[6]+d[7]+"℃");
         rainfullT_2.setText(d[8]+d[9]);
         statusT_2.setText(d[3]);
+
+        /*LinearLayout background = (LinearLayout) findViewById(R.id.today_relative);
+        Resources resources = this.getResources();
+        Drawable qing = resources.getDrawable(R.drawable.biz_plugin_weather_qing);
+        Drawable cloudy = resources.getDrawable(R.drawable.biz_plugin_weather_cloudy);
+        Drawable yin = resources.getDrawable(R.drawable.biz_plugin_weather_yin);
+        Drawable rain = resources.getDrawable(R.drawable.biz_plugin_weather_rain);
+
+        Log.d("77777",b[3]);
+
+        if(statusT.getText()!=null){
+            Log.d("88888888",b[3]);
+            switch (b[3]){
+                case "晴時多雲":
+                    background.setBackground(qing);
+                    break;
+                case "多雲時晴":
+                    background.setBackground(qing);
+                case "多雲":
+                    background.setBackground(cloudy);
+                    break;
+                case "多雲時陰":
+                    background.setBackground(cloudy);
+                case "陰時多雲":
+                    background.setBackground(cloudy);
+                    break;
+                case "陰天":
+                    background.setBackground(yin);
+                case "晴午後短暫雷陣雨":
+                    background.setBackground(rain);
+                    break;
+                case "陰時多雲短暫陣雨或雷雨":
+                    background.setBackground(rain);
+                case "多雲時陰短暫陣雨或雷雨":
+                    background.setBackground(rain);
+                    break;
+                case "多雲午後短暫雷陣雨":
+                    background.setBackground(rain);
+                case "陰短暫陣雨或雷雨":
+                    background.setBackground(rain);
+                    break;
+            }
+        }*/
         Toast.makeText(MainActivity.this,"更新成功",Toast.LENGTH_SHORT).show();
     }
     //獲取JSON資料
